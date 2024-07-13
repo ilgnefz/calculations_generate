@@ -1,0 +1,131 @@
+flutter_native_splash:
+  # 此包生成原生代码来自定义 Flutter 默认的白色原生启动画面
+  # 带有背景颜色和启动图像。
+  # 自定义以下参数，并在终端中运行以下命令：
+  # Flutter 运行 flutter_native_splash:create
+  # 要恢复 Flutter 默认的白色启动画面，请在终端中运行以下命令：
+  # Flutter 运行 flutter_native_splash:remove
+
+  # 重要提示：这些参数不会影响 Android 12 及更高版本的配置，这会
+  # 处理启动画面的方式与以前版本的 Android 不同。 Android 12 及更高版本必须
+  # 在下面的 Android 12 部分中专门配置。
+
+  # color 或 background_image是唯一必需的参数。 使用颜色设置背景
+  # 将初始屏幕设置为纯色。 使用 background_image 设置背景
+  # 启动画面转换为 PNG 图像。 这对于渐变很有用。图像将被拉伸到
+  # 应用的大小。只能使用一个参数，color和 background_image不能同时设置。
+  color: "#ffffff"
+  #background_image: "assets/background.png"
+
+  # 可选参数如下。 要启用参数，请通过删除来取消注释该行前导 # 字符。
+
+  # image 参数允许您指定在启动画面中使用的图像。 它必须是一个 PNG 文件，其大小应为 4 倍像素密度。
+  #image: assets/splash.png
+
+  # branding 属性允许您指定在初始屏幕中用作品牌的图像。
+  # 必须是 png 文件。它支持 Android、iOS 和 Web。 对于 Android 12 请参阅下面的 Android 12 部分。
+  branding: assets/logo.png
+
+  # 要将品牌图像放置在屏幕底部，您可以使用 bottom、bottomRight 和 bottomLeft。如果未指定或指定其他内容，
+  # 则默认值为 bottom。
+  #branding_mode: bottom
+
+  # color_dark、background_image_dark、image_dark、branding_dark是设置背景的参数
+  # 并在设备处于暗模式时进行图像处理。如果未指定它们，则应用程序将使用
+  # 上面的参数。如果指定了 image_dark 参数，color_dark 或
+  # 必须指定background_image_dark。 color_dark 和 background_image_dark 不能两者都是设置
+  #color_dark: "#042a49"
+  #background_image_dark: "assets/dark-background.png"
+  #image_dark: assets/splash-invert.png
+  #branding_dark: assets/dart_dark.png
+
+  # 从 Android 12 开始，启动画面的处理方式与之前版本不同。
+  # 请访问 https://developer.android.com/guide/topics/ui/splash-screen
+  # 以下是 Android 12+ 的具体参数。
+  android_12:
+  # image 参数用于设置启动画面图标图像。 如果未指定此参数， 将改用应用程序的启动器图标。
+  # 请注意，启动画面将被剪切为屏幕中心的一个圆圈。
+  # 带有图标背景的应用图标：这应该是 960×960 像素，并且适合一个圆圈直径 640 像素。
+  # 没有图标背景的应用图标：这应该是 1152×1152 像素，并且适合一个圆圈直径 768 像素。
+  #image: assets/android12splash.png
+
+  # 初始屏幕背景颜色。
+    color: "#ffffff"
+
+  # 应用图标背景颜色。
+  #icon_background_color: "#111111"
+
+  # Branding 属性允许您指定在初始屏幕中用作品牌标识的图像。
+    branding: assets/logo.png
+
+  # image_dark、color_dark、icon_background_color_dark和 branding_dark 设置的值
+  # 当设备处于深色模式时应用。如果未指定它们，则应用程序将使用上面的参数。
+  #image_dark: assets/android12splash-invert.png
+  #color_dark: "#042a49"
+  #icon_background_color_dark: "#eeeeee"
+
+  # android、ios 和 web 参数可用于禁用在给定的屏幕上生成启动画面平台。
+  #android: false
+  #ios: false
+  #web: false
+
+  # 可以使用以下参数指定特定于平台的图像，这些参数将覆盖相应的参数。 您可以指定以下所有参数、选定参数或不指定任何参数：
+  #color_android: "#42a5f5"
+  #color_dark_android: "#042a49"
+  #color_ios: "#42a5f5"
+  #color_dark_ios: "#042a49"
+  #color_web: "#42a5f5"
+  #color_dark_web: "#042a49"
+  #image_android: assets/splash-android.png
+  #image_dark_android: assets/splash-invert-android.png
+  #image_ios: assets/splash-ios.png
+  #image_dark_ios: assets/splash-invert-ios.png
+  #image_web: assets/splash-web.gif
+  #image_dark_web: assets/splash-invert-web.gif
+  #background_image_android: "assets/background-android.png"
+  #background_image_dark_android: "assets/dark-background-android.png"
+  #background_image_ios: "assets/background-ios.png"
+  #background_image_dark_ios: "assets/dark-background-ios.png"
+  #background_image_web: "assets/background-web.png"
+  #background_image_dark_web: "assets/dark-background-web.png"
+  #branding_android: assets/brand-android.png
+  #branding_dark_android: assets/dart_dark-android.png
+  #branding_ios: assets/brand-ios.png
+  #branding_dark_ios: assets/dart_dark-ios.png
+  #branding_web: assets/brand-web.gif
+  #branding_dark_web: assets/dart_dark-web.gif
+
+  # 启动画面的位置可以用 android_gravity、ios_content_mode 和 web_image_mode参数。 全部默认为居中。
+  #
+  # android_gravity 可以是以下 Android Gravity 之一（参见
+  # https://developer.android.com/reference/android/view/Gravity）：底部、中心、
+  # center_horizontal、center_vertical、clip_horizontal、clip_vertical、结束、填充、fill_horizontal、
+  # fill_vertical、左、右、开始或顶部。
+  #android_gravity: center
+  #
+  # ios_content_mode可以是以下 iOS UIView.ContentMode 之一（请参阅
+  # https://developer.apple.com/documentation/uikit/uiview/contentmode）： scaleToFill，
+  # scaleAspectFit、scaleAspectFill、center、top、bottom、left、right、topLeft、topRight、
+  # bottomLeft 或 bottomRight。
+  #ios_content_mode: center
+  #
+  # web_image_mode 可以是以下模式之一：居中、包含、拉伸和覆盖。
+  #web_image_mode: center
+
+  # 可以在 Android 中使用 android_screen_orientation 参数设置屏幕方向。 有效参数可以在这里找到：
+  # https://developer.android.com/guide/topics/manifest/activity-element#screen
+  #android_screen_orientation: sensorLandscape
+
+  # 要隐藏通知栏，请使用 fullscreen 参数。 在网络中没有效果，因为网络没有通知栏。 默认值为 false。
+  # 注意：与 Android 不同，iOS 不会在应用程序加载时自动显示通知栏。
+  # 要显示通知栏，请将以下代码添加到您的 Flutter 应用中：
+  #       WidgetsFlutterBinding.ensureInitialized();
+  #       SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: [SystemUiOverlay.bottom, SystemUiOverlay.top], );
+  #fullscreen: true
+
+  # 如果您更改了 info.plist 文件的名称，您可以指定文件名
+  # 使用 info_plist_files 参数。 仅删除以下三行中的 # 字符，
+  # 不要删除任何空格：
+  #info_plist_files:
+  #  - 'ios/Runner/Info-Debug.plist'
+  #  - 'ios/Runner/Info-Release.plist'
